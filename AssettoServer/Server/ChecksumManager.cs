@@ -51,7 +51,7 @@ public class ChecksumManager
     {
         var dict = new Dictionary<string, byte[]>();
         
-        AddChecksum(dict, "system/data/surfaces.ini");
+        //AddChecksum(dict, "system/data/surfaces.ini");
 
         string trackPath = $"content/tracks/{track}";
 
