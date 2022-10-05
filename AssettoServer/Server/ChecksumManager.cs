@@ -107,16 +107,16 @@ public class ChecksumManager
 
     private static bool TryCreateChecksum(string filePath, [MaybeNullWhen(false)] out byte[] checksum)
     {
-        //if (File.Exists(filePath))
-        //{
+        if (File.Exists(filePath))
+        {
             using var md5 = MD5.Create();
             using var fileStream = File.OpenRead(filePath);
             checksum = md5.ComputeHash(fileStream);
             return true;
-        //}
+        }
 
-        //checksum = null;
-        //return false;
+        checksum = null;
+        return false;
     }
 
     private static void AddChecksum(Dictionary<string, byte[]> dict, string filePath, string? name = null)
